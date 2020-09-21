@@ -1,5 +1,7 @@
 # todo-1
 
+Simple vue project to create a task management frontend for this qq [bot](https://github.com/mkZH0740/vtb_retweet_bot)
+
 ## Project setup
 ```
 npm install
