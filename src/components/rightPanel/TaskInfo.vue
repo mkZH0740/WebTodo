@@ -10,7 +10,7 @@
             <span class="title-item">{{section.title}}</span>
           </div>
           <div>
-            <el-tag v-for="(person, index) in section.people" :key="index" :closable="!disabled" @close="removePerson(index, section.people)">{{person}}</el-tag>
+            <MakeTag :people="section.people" :disabled="disabled"></MakeTag>
           </div>
           <div v-if="'link' in section">
             <el-link target="_blank" type="primary" :href="section.link">文件链接:</el-link>
@@ -27,8 +27,10 @@
 </template>
 
 <script>
+import MakeTag from "@/components/rightPanel/MakeTag";
 export default {
   name: "TaskInfo",
+  components: {MakeTag},
   props: {
     task: Object
   },
@@ -38,9 +40,6 @@ export default {
     }
   },
   methods: {
-    removePerson (index, people) {
-      people.splice(index, 1)
-    },
     getColor (progress) {
       switch (progress) {
         case 0:
@@ -58,6 +57,7 @@ export default {
 </script>
 
 <style scoped>
+
   .desc-panel {
     margin-bottom: 2%;
   }

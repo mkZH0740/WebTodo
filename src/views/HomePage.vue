@@ -42,7 +42,7 @@ export default {
   beforeCreate () {
     Axios.get(`http://localhost:8000/tasks?group_key=${this.$route.query.group_key}`).then(res => {
       this.tasks = res.data.tasks
-      this.group_id = res.data.group_id
+      this.$store.state.group_id = res.data.group_id
     })
   }
 }
