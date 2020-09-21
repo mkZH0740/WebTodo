@@ -32,11 +32,13 @@ export default {
   },
   methods: {
     switchTask (index) {
-      console.log(index)
       this.currentIndex = index
     },
     addTask(){
-      console.log("new task");
+      this.tasks.push({
+        desc: "新任务",
+        sections: []
+      })
     }
   },
   beforeCreate () {
