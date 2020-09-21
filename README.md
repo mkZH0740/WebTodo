@@ -2,6 +2,11 @@
 
 Simple vue project to create a task management frontend for this qq [bot](https://github.com/mkZH0740/vtb_retweet_bot)
 
+## TODO
+1. create login page for later usage
+2. create task management page
+3. create ass view and review page
+
 ## Project setup
 ```
 npm install

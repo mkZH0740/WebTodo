@@ -5,9 +5,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    group_id: ''
+    serverIP: 'http://localhost:8000',
+    loggedIn: false,
+    userInfo: {
+      userId: '',
+      groupId: ''
+    }
   },
   mutations: {
+    setLoggedIn (state) {
+      state.loggedIn = true
+    },
+    setUserInfo (state, payload) {
+      state.userInfo.userId = payload.userId
+      state.userInfo.groupId = payload.groupId
+    }
   },
   actions: {
   },
