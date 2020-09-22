@@ -15,7 +15,9 @@ import {
     Dialog,
     Switch,
     Popconfirm,
-    Upload
+    Upload,
+    Table,
+    TableColumn
 } from 'element-ui'
 
 Vue.use(Container)
@@ -35,3 +37,5 @@ Vue.use(Dialog)
 Vue.use(Switch)
 Vue.use(Popconfirm)
 Vue.use(Upload)
+Vue.use(Table)
+Vue.use(TableColumn)
