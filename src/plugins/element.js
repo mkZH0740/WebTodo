@@ -14,7 +14,8 @@ import {
     Tag,
     Dialog,
     Switch,
-    Popconfirm
+    Popconfirm,
+    Upload
 } from 'element-ui'
 
 Vue.use(Container)
@@ -33,3 +34,4 @@ Vue.use(Tag)
 Vue.use(Dialog)
 Vue.use(Switch)
 Vue.use(Popconfirm)
+Vue.use(Upload)
