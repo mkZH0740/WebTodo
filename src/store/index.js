@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import Axios from "axios";
+import {Notification} from "element-ui";
 
 Vue.use(Vuex)
 
@@ -36,6 +37,11 @@ export default new Vuex.Store({
         if (res.data.status) {
           context.commit('addTask', res.data.tasks)
         }
+      }).catch(() => {
+        Notification.error({
+          title: '错误！',
+          message: '网络错误，获取文件内容失败'
+        })
       })
     }
   },

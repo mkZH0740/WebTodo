@@ -20,6 +20,7 @@
 import TaskPageHeader from "@/components/TaskPage/Header/TaskPageHeader";
 import TaskPageAside from "@/components/TaskPage/Aside/TaskPageAside";
 import TaskPageMain from "@/components/TaskPage/Main/TaskPageMain";
+
 export default {
   name: "TaskPanel",
   components: {TaskPageMain, TaskPageAside, TaskPageHeader},

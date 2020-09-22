@@ -33,6 +33,7 @@
 
 <script>
 import Axios from 'axios'
+import { Notification } from 'element-ui'
 
 export default {
   name: "UploadFile",
@@ -59,6 +60,11 @@ export default {
       Axios.get(`${this.$store.state.serverIP}/files?filename=${filename}`).then(res => {
         this.currentFileContent = res.data.content
         this.contentVisible = true
+      }).catch(() => {
+        Notification.error({
+          title: '错误！',
+          message: '网络错误，获取文件内容失败'
+        })
       })
     },
     fileUploaded (response, file) {
