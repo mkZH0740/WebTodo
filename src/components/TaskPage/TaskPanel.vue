@@ -35,7 +35,5 @@ export default {
     width: 1500px;
     margin: auto;
     padding: 10px;
-
-    background-color: rgba(0, 0, 0, .1);
   }
 </style>
