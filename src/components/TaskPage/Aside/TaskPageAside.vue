@@ -1,7 +1,7 @@
 <template>
   <div id="task-list">
     <div class="title">任务列表</div>
-    <ul style="list-style: none">
+    <ul style="list-style: none; padding: 0">
       <li v-for="(task, index) in tasks" :key="index">
         <el-button type="primary" class="task-button" @click="switchTask(index)">{{ task.desc }}</el-button>
       </li>
@@ -29,9 +29,9 @@ export default {
   }
 
   .task-button {
-    width: 80%;
+    width: 100%;
     height: 50px;
-    margin: 10px auto;
+    margin-top: 5px;
   }
 
   .title {
@@ -41,8 +41,6 @@ export default {
     font-size: 30px;
     text-align: center;
   }
-
-
 
   ::-webkit-scrollbar-track {
     width: 4px;
