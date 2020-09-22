@@ -4,7 +4,7 @@
       <el-button type="primary" v-for="(file, index) in currentFileList" :key="index" @click="navigateFileContent(file.name)">{{ file.name }}</el-button>
     </div>
     <div>
-      <el-upload class="upload-file" :action="postUrl" multiple :file-list="fileList" accept=".ass" :on-success="fileUploaded">
+      <el-upload v-if="editing" class="upload-file" :action="postUrl" multiple :file-list="fileList" accept=".ass" :on-success="fileUploaded">
         <el-button size="small" type="primary">点击上传</el-button>
       </el-upload>
       <el-dialog title="轴文件内容" :visible.sync="contentVisible" width="1000px">
@@ -22,9 +22,9 @@
           </el-table>
         </div>
         <div>
-          <el-button type="primary" :disabled="editing" @click="editing=true">编辑</el-button>
-          <el-button type="primary" :disabled="!editing" @click="editing=false">保存</el-button>
-          <el-button type="primary" :disabled="!editing" @click="editing=false">取消</el-button>
+          <el-button type="primary" :disabled="contentEditing" @click="contentEditing=true">编辑</el-button>
+          <el-button type="primary" :disabled="!contentEditing" @click="contentEditing=false">保存</el-button>
+          <el-button type="primary" :disabled="!contentEditing" @click="contentEditing=false">取消</el-button>
         </div>
       </el-dialog>
     </div>
@@ -38,14 +38,15 @@ export default {
   name: "UploadFile",
   props: {
     fileList: Array,
-    sectionTitle: String
+    sectionTitle: String,
+    editing: Boolean
   },
   data () {
     return {
       currentFileList: this.fileList,
       currentFileContent: [],
       contentVisible: false,
-      editing: false
+      contentEditing: false
     }
   },
   computed: {

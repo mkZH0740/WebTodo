@@ -18,7 +18,7 @@
           </div>
           <!--        display file -->
           <div v-if="'files' in section" class="collapse-item">
-            <UploadFile :file-list="section.files"></UploadFile>
+            <UploadFile :file-list="section.files" :editing="editing"></UploadFile>
           </div>
 
           <!--        remove section button-->
